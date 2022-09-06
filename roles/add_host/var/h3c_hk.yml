@@ -1,0 +1,3 @@
+ansible_port: "{{ device.value.port }}"
+ansible_user: '{{ lookup("env", "H3C_USERNAME") }}'
+ansible_password: '{{ lookup("env", "H3C_PASSWORD") }}'

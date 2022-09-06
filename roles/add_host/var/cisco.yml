@@ -1,0 +1,4 @@
+ansible_port: "{{ device.value.port }}"
+ansible_user: '{{ lookup("env", "CISCO_USERNAME") }}'
+ansible_password: '{{ lookup("env", "CISCO_PASSWORD") }}'
+ansible_network_os: 'cisco.ios.ios'

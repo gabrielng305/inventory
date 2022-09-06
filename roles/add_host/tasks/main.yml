@@ -1,0 +1,7 @@
+- name: add temp host to h3cgroup
+  include_tasks: h3c.yml
+  when: device.value.network_os == "h3c"
+
+- name: add temp host to ciscogroup
+  include_tasks: cisco.ios.yml
+  when: device.value.network_os == "cisco"
