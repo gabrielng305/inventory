@@ -4,8 +4,8 @@
   gather_facts: no
   tasks:
     - name: Here we are using Ansible add_host module to add a host to in-memory inventory
-      roles:
-        - add_host
+      include_role:
+        name: "add_host"
       loop: "{{ entries }}"
       loop_control:
         loop_var: entry
