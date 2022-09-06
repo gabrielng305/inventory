@@ -15,8 +15,8 @@
   gather_facts: no
   connection: ansible.netcommon.network_cli
   tasks:
-    - roles:
-      - gather_device_info
+    - include_role:
+      name: "gather_device_info"
     - debug:
       var: ansible_facts
 
@@ -24,8 +24,8 @@
   hosts: h3cgroup
   gather_facts: no
   tasks:
-    - roles:
-      - gather_device_info
+    - include_role:
+      name: "gather_device_info"
     - debug:
       var: ansible_facts
 
