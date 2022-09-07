@@ -1,14 +1,14 @@
 ---
 - hosts: localhost
-  connection: no
-  gather_facts: no
+  gather_facts: false
+
   tasks:
-    - name: Here we are using Ansible add_host module to add a host to in-memory inventory
-      include_role:
-        name: "add_host"
-      loop: "{{ entries }}"
-      loop_control:
-        loop_var: entry
+  - name: Here we are using Ansible add_host module to add a host to in-memory inventory
+    include_role:
+      name: add_host
+    loop: "{{ entries }}"
+    loop_control:
+      loop_var: entry
 
 - name: gather device information for cisco
   hosts: ciscogroup

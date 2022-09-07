@@ -3,5 +3,5 @@
   when: entry.network_os == "h3c"
 
 - name: add temp host to ciscogroup
-  include_tasks: cisco.ios.yml
+  include_tasks: cisco.yml
   when: entry.network_os == "cisco"
