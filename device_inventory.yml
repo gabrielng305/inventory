@@ -16,30 +16,30 @@
   connection: ansible.netcommon.network_cli
   tasks:
     - include_role:
-      name: "gather_device_info"
+        name: "gather_device_info"
     - debug:
-      var: ansible_facts
+        var: ansible_facts
 
 - name: gather device information for H3C
   hosts: h3cgroup
   gather_facts: no
   tasks:
     - include_role:
-      name: "gather_device_info"
+        name: "gather_device_info"
     - debug:
-      var: ansible_facts
+        var: ansible_facts
 
 - name: Show all Facts inforamtion
   hosts: localhost
   tasks:
     - debug:
-      msg: "hostname: {{ myhost}} , ansible_net_model: {{ hostvars[myhost]['ansible_facts']['h3c_facts'].ansible_net_model }}, ansible_net_serialnum: {{ hostvars[myhost]['ansible_facts']['h3c_facts'].ansible_net_serialnum }} "
-      loop: "{{ groups['h3cgroup'] }}"
-      loop_control:
-        loop_var: myhost
+        msg: "hostname: {{ myhost}} , ansible_net_model: {{ hostvars[myhost]['ansible_facts']['h3c_facts'].ansible_net_model }}, ansible_net_serialnum: {{ hostvars[myhost]['ansible_facts']['h3c_facts'].ansible_net_serialnum }} "
+        loop: "{{ groups['h3cgroup'] }}"
+        loop_control:
+          loop_var: myhost
 
     - debug:
-      msg: "hostname: {{ myhost}} , ansible_net_model: {{ hostvars[myhost]['ansible_facts'].net_model }}, ansible_net_serialnum: {{ hostvars[myhost]['ansible_facts'].net_serialnum }} "
-      loop: "{{ groups['ciscogroup'] }}"
-      loop_control:
-        loop_var: myhost
+        msg: "hostname: {{ myhost}} , ansible_net_model: {{ hostvars[myhost]['ansible_facts'].net_model }}, ansible_net_serialnum: {{ hostvars[myhost]['ansible_facts'].net_serialnum }} "
+        loop: "{{ groups['ciscogroup'] }}"
+        loop_control:
+          loop_var: myhost
