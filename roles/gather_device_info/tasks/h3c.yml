@@ -13,5 +13,5 @@
     text: "{{ device_info.msg | join(',\n') }}"
     parser:
       name: ansible.netcommon.native
-      template_path: templates/display_device_manuinfo.yaml
+      template_path: templates/display_device_manuinfo.yml
     set_fact: h3c_facts

@@ -1,5 +1,5 @@
 - name: gather device information
   include_tasks: "{{ item }}"
   with_first_found:
-    - cisco.ios.yml
+    - cisco.yml
     - h3c.yml
