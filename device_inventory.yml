@@ -16,7 +16,7 @@
   connection: ansible.netcommon.network_cli
   tasks:
     - include_role:
-        name: "gather_device_info"
+        name: "roles/gather_device_info"
     - debug:
         var: ansible_facts
 
@@ -25,7 +25,7 @@
   gather_facts: no
   tasks:
     - include_role:
-        name: "gather_device_info"
+        name: "roles/gather_device_info"
     - debug:
         var: ansible_facts
 
