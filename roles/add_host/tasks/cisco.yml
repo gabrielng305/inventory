@@ -1,5 +1,5 @@
 - name: Here we are using Ansible add_host module to add a host to in-memory inventory
   add_host:
-    name: "{{ device.value.hostname }}"
+    name: "{{ entry.hostname }}"
     groups: ciscogroup
     include_vars: cisco.yml
