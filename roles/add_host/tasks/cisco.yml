@@ -3,3 +3,6 @@
     name: "{{ entry.hostname }}"
     groups: ciscogroup
     include_vars: cisco.yml
+
+- debug:
+    var: ansible_network_os
