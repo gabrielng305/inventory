@@ -1,5 +1,5 @@
 - debug:
-    var: ansible_network_os
+    msg: "{{ ansible_network_os }}"
 - name: "Gather device information from cisco ios"
   cisco.ios.facts:
     available_network_resources: false
